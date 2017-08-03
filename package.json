@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "angular": "^1.6.5",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.18.13"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

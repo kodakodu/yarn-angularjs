@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body ng-app>
+
+<input type="text" ng-model="query">
+<select ng-model="order">
+    <option value="username">Organiser par nom</option>
+    <option value="content">Organiser par contenu</option>
+</select>
+        <div ng-init="users=[{username:'Marc', content:'Salut les gens'},{username:'Jean', content:'Comment ça va ?'},{username:'Yann', content:'Merci, ça va'}]">
+            <ul>
+                <div ng-repeat="user in users | filter:{content:query} | orderBy : order" style="border-style: solid;border-color:blue;margin-bottom: 5pt;">
+                    
+                    <p><strong>{{user.username | uppercase}}</strong></p>
+                    </br>
+                    <i>{{user.content}}</i>
+                </div>
+            </ul>
+            {{user.username | filter:'M'}}
+        </div>
+        <input type="text" ng-model="task"/>
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script> -->
+        <script src="public/components/angular/angular.js"></script>
+
+        <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+    </body>
+</html>
